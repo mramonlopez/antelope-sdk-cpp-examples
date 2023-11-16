@@ -190,5 +190,5 @@ void MainScene::menuCallback(Ref* pSender) {
     }
     
     item->selected();
-    this->setNetwork(item->getName());
+    this->setNetwork(std::string(item->getName()));
 }

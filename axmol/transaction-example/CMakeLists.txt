@@ -248,9 +248,6 @@ ax_setup_app_props(${APP_NAME})
 ################################################
 include(cmake/antelope-sdk-cpp.cmake)
 
-set(CURL_INCLUDE_DIR ${_AX_ROOT}/thirdparty/curl/include)
-# PRIVATE ${_AX_ROOT}/thirdparty/openssl/include
-
 target_include_directories(${APP_NAME} 
     PRIVATE ${eosclient_SOURCE_DIR}/include
 )
