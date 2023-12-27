@@ -28,6 +28,7 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import <eosclient/SigningRequestCallbackManager.hpp>
 
 @implementation AppController
 
@@ -91,6 +92,10 @@ static AppDelegate s_sharedApplication;
     app->run();
 
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    onikami::eosclient::SigningRequestCallbackManager::getInstance()->onCallback([url.absoluteString UTF8String]);
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application
